@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TapUp — Premium QR Dining</title>
+  <meta name="description" content="TapUp és la solució premium de menú QR amb comandes i pagament des de la taula per a restaurants d’alta gamma.">
+
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --card: #141416;
+      --text: #f5f5f5;
+      --muted: #a1a1aa;
+      --accent: #c8a96a;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    h1 { font-size: 56px; margin-bottom: 10px; }
+    h2 { font-size: 40px; margin-bottom: 30px; }
+    h3 { font-size: 22px; margin-bottom: 10px; }
+
+    p { font-size: 18px; color: var(--text); }
+    .muted { color: var(--muted); }
+
+    .hero {
+      text-align: center;
+      padding: 140px 20px 120px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-top: 40px;
+    }
+
+    section { border-top: 1px solid #222; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    form input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+      background: #000;
+    }
+
+    .lang {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang button {
+      background: none;
+      color: var(--muted);
+      border: none;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 40px; }
+      h2 { font-size: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- LANGUAGE -->
+<div class="lang">
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+  <button onclick="setLang('fr')">FR</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="tagline" data-i18n="tagline">Dining experience, reinvented</div>
+  <h1>TapUp</h1>
+  <p data-i18n="hero">
+    Digitalitza l’experiència del teu restaurant i permet que els clients
+    demanin i paguin des de la taula amb elegància i discreció.
+  </p>
+  <a href="#contacte" class="btn" data-i18n="cta">Sol·licitar demo privada</a>
+</div>
+
+<!-- VALUE -->
+<section>
+  <div class="container">
+    <h2 data-i18n="value_title">Dissenyat per a restaurants d’alta gamma</h2>
+    <p class="muted" data-i18n="value_text">
+      TapUp complementa el servei, no el substitueix.
+      El client controla el temps. El restaurant manté l’excel·lència.
+    </p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section>
+  <div class="container">
+    <h2 data-i18n="how">Com funciona</h2>
+    <div class="grid">
+      <div class="card"><h3>1</h3><p data-i18n="how1">Escaneig discret del QR</p></div>
+      <div class="card"><h3>2</h3><p data-i18n="how2">Comanda sense interrupcions</p></div>
+      <div class="card"><h3>3</h3><p data-i18n="how3">Pagament elegant i immediat</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <h2 data-i18n="price">Model premium</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="setup">Alta</h3>
+        <div class="price">199 €</div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="monthly">Mensual</h3>
+        <div class="price">39 €</div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="commission">Comissió</h3>
+        <div class="price">0 %</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacte">
+  <div class="container">
+    <h2 data-i18n="contact">Contacte privat</h2>
+
+    <!-- FORM WITHOUT BACKEND -->
+    <form action="https://formspree.io/f/xbldzjyk" method="POST">
+      <input type="text" name="restaurant" placeholder="Restaurant" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Telèfon">
+      <button class="btn" type="submit" data-i18n="send">Sol·licitar demo</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>TapUp · Premium QR Dining</p>
+</footer>
+
+<script>
+const i18n = {
+  ca: {
+    tagline: "Experiència gastronòmica reinventada",
+    hero: "Digitalitza l’experiència del teu restaurant i permet que els clients demanin i paguin des de la taula amb elegància i discreció.",
+    cta: "Sol·licitar demo privada",
+    value_title: "Dissenyat per a restaurants d’alta gamma",
+    value_text: "TapUp complementa el servei, no el substitueix.",
+    how: "Com funciona",
+    how1: "Escaneig discret del QR",
+    how2: "Comanda sense interrupcions",
+    how3: "Pagament elegant i immediat",
+    price: "Model premium",
+    setup: "Alta",
+    monthly: "Mensual",
+    commission: "Comissió",
+    contact: "Contacte privat",
+    send: "Sol·licitar demo"
+  },
+  es: {
+    tagline: "Experiencia gastronómica reinventada",
+    hero: "Digitaliza la experiencia de tu restaurante y permite que los clientes pidan y paguen desde la mesa con elegancia y discreción.",
+    cta: "Solicitar demo privada",
+    value_title: "Diseñado para restaurantes de alta gama",
+    value_text: "TapUp complementa el servicio, no lo sustituye.",
+    how: "Cómo funciona",
+    how1: "Escaneo discreto del QR",
+    how2: "Pedido sin interrupciones",
+    how3: "Pago elegante e inmediato",
+    price: "Modelo premium",
+    setup: "Alta",
+    monthly: "Mensual",
+    commission: "Comisión",
+    contact: "Contacto privado",
+    send: "Solicitar demo"
+  },
+  fr: {
+    tagline: "L’expérience gastronomique réinventée",
+    hero: "Digitalisez l’expérience de votre restaurant et permettez aux clients de commander et payer depuis la table avec élégance.",
+    cta: "Demander une démo privée",
+    value_title: "Conçu pour la restauration haut de gamme",
+    value_text: "TapUp complète le service, il ne le remplace pas.",
+    how: "Comment ça marche",
+    how1: "Scan discret du QR",
+    how2: "Commande sans interruption",
+    how3: "Paiement élégant et immédiat",
+    price: "Modèle premium",
+    setup: "Installation",
+    monthly: "Mensuel",
+    commission: "Commission",
+    contact: "Contact privé",
+    send: "Demander une démo"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    el.textContent = i18n[lang][el.dataset.i18n];
+  });
+}
+</script>
+
+</body>
+</html>
 # tapup
