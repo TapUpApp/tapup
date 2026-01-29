@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Exemple · TapUp</title>
+
+  <style>
+    :root {
+      --brand: #8b6b3d; /* color restaurant */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #111;
+    }
+
+    header {
+      background: var(--brand);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu {
+      padding: 20px;
+    }
+
+    .item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .pay {
+      display: block;
+      background: var(--brand);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin: 30px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Restaurant Exemple</h1>
+  <p>Menú digital · TapUp</p>
+</header>
+
+<div class="menu">
+  <div class="item">
+    Entrant del dia
+    <span class="price">8 €</span>
+  </div>
+
+  <div class="item">
+    Plat principal
+    <span class="price">14 €</span>
+  </div>
+
+  <div class="item">
+    Postre
+    <span class="price">6 €</span>
+  </div>
+</div>
+
+<!-- 🔴 AQUÍ POSES EL PAYMENT LINK DE STRIPE -->
+<a class="pay" href="https://buy.stripe.com/XXXXX">
+  Pagar des del mòbil
+</a>
+
+</body>
+</html>
